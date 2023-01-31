@@ -1,13 +1,16 @@
 import RoundHeader from '../roundHeader/RoundHeader'
 import PhotoMain from '../photoMain/PhotoMain'
-import Slider from '../slider/Slider'
+import Results from '../results/Results'
+import { useAppSelector } from '../../redux/store/store'
 
 const MainGame = () => {
+  const state = useAppSelector((state) => { return state.currentGame })
+
   return (
     <>
     <RoundHeader/>
     <PhotoMain/>
-    <Slider/>
+    { state.showRoundScore ? <Results/> : null}
     </>
   )
 }
