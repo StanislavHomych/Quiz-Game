@@ -10,6 +10,7 @@ interface imageType {
 export interface gameState {
   roundNumber: number
   totalScore: number
+  bestScore: number
   currenRoundScore: number
   currentPictureYear: number
   randomImageIndex: number
@@ -23,10 +24,11 @@ export interface gameState {
 const initialState: gameState = {
   roundNumber: 1,
   totalScore: 0,
+  bestScore: 0,
   currenRoundScore: 0,
   currentPictureYear: 0,
   randomImageIndex: 0,
-  selectedYear: 0,
+  selectedYear: 1960,
   showRoundScore: false,
   images: [],
   loading: false,
@@ -66,21 +68,37 @@ const gameSlice = createSlice({
   reducers: {
     submitRound: (state) => {
       state.roundNumber = state.roundNumber + 1
+      state.currenRoundScore = 0
+      state.selectedYear = 1960
     },
-    showRoundResult: (state) => {
+    showRoundResult: (state, action) => {
       state.showRoundScore = !state.showRoundScore
+      state.currentPictureYear = action.payload
     },
     newRandomImage: (state, action) => {
       state.randomImageIndex = Math.round(Math.random() * (action.payload.length - 1))
+      state.currentPictureYear = action.payload[state.randomImageIndex].year
     },
     resetGame: (state, action) => {
       state.roundNumber = 1
       state.currenRoundScore = 0
       state.totalScore = 0
       state.randomImageIndex = Math.round(Math.random() * (action.payload.length - 1))
+      state.showRoundScore = !state.showRoundScore
+      state.selectedYear = 1960
+    },
+    selectYear: (state, action) => {
+      state.selectedYear = action.payload
+    },
+    calculateCurrentRoundScore: (state, action) => {
+      state.currenRoundScore = action.payload
+      state.totalScore = state.currenRoundScore + state.totalScore
+      if (state.bestScore < state.totalScore) {
+        state.bestScore = state.totalScore
+      }
     }
   }
 })
 
-export const { submitRound, showRoundResult, newRandomImage, resetGame } = gameSlice.actions
+export const { submitRound, showRoundResult, newRandomImage, resetGame, selectYear, calculateCurrentRoundScore } = gameSlice.actions
 export default gameSlice
