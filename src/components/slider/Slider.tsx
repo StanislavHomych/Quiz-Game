@@ -35,8 +35,12 @@ const Slider = () => {
 
   return (
     <div>
-      <div>{state.selectedYear}</div>
-      <div className={styles.slidercontainer}>
+      <div className='flex items-center justify-center'>
+        <h1 className='font-K2D text-2xl mt-2 mb-2'>
+         {state.selectedYear}
+        </h1>
+        </div>
+      <div className={`${styles.slidercontainer} flex items-center justify-center`}>
         <input className={styles.slider}
         type="range"
         min="1900"
@@ -47,7 +51,7 @@ const Slider = () => {
            />
       </div>
       <div className='flex items-center justify-center'>
-        {state.roundNumber > 5 ? <button onClick={newRound} className='bg-green-100 h-10 w-28'>New Round</button> : !state.showRoundScore && <button className='bg-green-100 h-10 w-20' onClick={showResults}>Submit</button>}
+        {state.roundNumber > 5 ? <button onClick={newRound} className='font-K2D text-2xl h-14 w-40 rounded-md text-white bg-light-green mt-4 transition duration-500 hover:bg-dark-green hover:text-black'>New Round</button> : !state.showRoundScore && <button className='font-K2D text-2xl h-14 w-40 rounded-md text-white bg-light-green mt-4 transition duration-500 hover:bg-dark-green hover:text-black' onClick={showResults}>Submit</button>}
       </div>
     </div>
   )

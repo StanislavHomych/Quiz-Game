@@ -28,7 +28,7 @@ const initialState: gameState = {
   currenRoundScore: 0,
   currentPictureYear: 0,
   randomImageIndex: 0,
-  selectedYear: 1960,
+  selectedYear: 1962,
   showRoundScore: false,
   images: [],
   loading: false,
