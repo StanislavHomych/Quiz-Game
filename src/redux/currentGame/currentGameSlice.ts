@@ -37,7 +37,7 @@ const initialState: gameState = {
 
 export const fetchImages = createAsyncThunk('gameSlice/fetchImages', () => {
   return axios
-    .get('http://localhost:3000/images')
+    .get('https://api-quiz-ga.herokuapp.com/images')
     .then((response) => response.data.map((image: imageType) => image))
 })
 
