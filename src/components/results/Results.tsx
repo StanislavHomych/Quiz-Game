@@ -39,7 +39,9 @@ const Results = () => {
               <h1 className='font-K2D text-2xl font-bold'>Total is <span className='text-green-500'>{state.totalScore}</span></h1>
               <h1 className='font-K2D text-xl font-medium'>2023</h1>
             </div>
-            {state.roundNumber === 5 ? <h1 className='font-K2D text-2xl font-bold'>Your best result is { getCookie('bestResult') }</h1> : null}
+        </div>
+        <div className='flex items-center justify-center'>
+        {state.roundNumber === 5 ? <h1 className='font-K2D text-2xl font-bold'>Your best result is { getCookie('bestResult') }</h1> : null}
         </div>
         <div>
             {state.roundNumber === 5 ? <button onClick={newGame} className='font-K2D text-2xl h-14 w-40 rounded-md text-white bg-light-green mt-4 transition duration-500 hover:bg-dark-green hover:text-black'>New Game</button> : <button className='font-K2D text-2xl h-14 w-40 rounded-md text-white bg-light-green mt-4 transition duration-500 hover:bg-dark-green hover:text-black' onClick={newRound}>Next Round</button>}
