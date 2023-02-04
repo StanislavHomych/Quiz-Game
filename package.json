@@ -6,11 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --fix --ext .ts,.tsx ./src"
+    "lint": "eslint --fix --ext .ts,.tsx ./src",
+    "json-server": "json-server --watch db.json"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
