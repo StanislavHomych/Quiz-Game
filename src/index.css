@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .button{
+        @apply font-K2D text-2xl h-14 w-40 rounded-md text-white bg-light-green mt-4 transition duration-500 hover:bg-dark-green hover:text-black
+    }
+
+    .commonHeader {
+        @apply font-K2D text-xl
+    }
+
+    .commonHeader--2xl{
+        @apply font-K2D text-2xl
+    }
+
+    .commonHeader--2xl_bold{
+        @apply font-K2D text-2xl font-bold
+    }
+
+    .commonHeader--2xl_md{
+        @apply font-K2D text-2xl font-medium
+    }
+
+}

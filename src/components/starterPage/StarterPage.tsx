@@ -6,30 +6,29 @@ import thirdMainImg from '../../assets/images/2007.jpg'
 
 const StarterPage = () => {
   return (
-    <div className='h-screen bg-stone-300 flex items-left flex-col'>
-      <h2 className={`${styles.headingMain} ml-10 mt-6`}>This is a game where you guess the year in which the photo was taken,</h2>
-      <h2 className={`${styles.headingMain} ml-10`}>the closer to the year you entered, the more points you will get.</h2>
+    <div className='h-screen bg-stone-300 flex items-left flex-col pl-10 pr-10 sm:text-center h-full md:text-left md:h-screen'>
+      <h2 className={`${styles.headingMain} mt-6 lg:w-4/5`}>This is a game where you guess the year in which the photo was taken, the closer to the year you entered, the more points you will get.</h2>
       <Link to="/game">
-      <button className={`${styles.btnMain} mt-10 ml-10 w-44 h-20`}>PLAY</button>
+        <button className='button w-full md:w-48'>PLAY</button>
       </Link>
-      <div className='flex mt-10 pl-10 pr-10 justify-between'>
-        <div className={styles.imgBoxMain}>
-        <h1 className={styles.yearHeading}>1948</h1>
-        <div className={styles.imgBox}>
-           <img className={`${styles.imgMain}`} src={firstMainImg} alt="exampleImg" />
+      <div className='flex mt-10 justify-between flex-col md:flex-row'>
+        <div className={`${styles.imgBoxMain} w-full md:w-1/3`}>
+          <h1 className={`${styles.yearHeading} md:text-6xl xl:text-7xl`}>1948</h1>
+          <div className={styles.imgBox}>
+            <img className={`${styles.imgMain}`} src={firstMainImg} alt="exampleImg" />
+          </div>
         </div>
+        <div className={`${styles.imgBoxMain} w-full md:w-1/3`}>
+          <h1 className={`${styles.yearHeading} md:text-6xl xl:text-7xl`}>2022</h1>
+          <div className={styles.imgBox}>
+            <img className={`${styles.imgMain}`} src={secondMainImg} alt="exampleImg2" />
+          </div>
         </div>
-        <div className={styles.imgBoxMain}>
-        <h1 className={styles.yearHeading}>2022</h1>
-        <div className={styles.imgBox}>
-        <img className={`${styles.imgMain}`} src={secondMainImg} alt="exampleImg2" />
-        </div>
-        </div>
-        <div className={styles.imgBoxMain}>
-        <h1 className={styles.yearHeading}>2007</h1>
-        <div className={styles.imgBox}>
-         <img className={`${styles.imgMain}`} src={thirdMainImg} alt="exampleImg2" />
-        </div>
+        <div className={`${styles.imgBoxMain} w-full md:w-1/3`}>
+          <h1 className={`${styles.yearHeading} md:text-6xl xl:text-7xl`}>2007</h1>
+          <div className={styles.imgBox}>
+            <img className={`${styles.imgMain}`} src={thirdMainImg} alt="exampleImg2" />
+          </div>
         </div>
       </div>
     </div>
